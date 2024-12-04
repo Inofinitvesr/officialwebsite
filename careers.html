@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Careers - Inofinitive SR</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicons -->
+    <link href="assets/img/logo.jpg" rel="icon" />
+    <link href="assets/img/logo.jpg" rel="apple-touch-icon" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link
+      href="assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+
+    <!-- Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet" />
+    <style>
+      /* General styles */
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Search bar styles */
+      .search-bar {
+        margin: 20px auto;
+        text-align: center;
+      }
+
+      .search-bar input {
+        padding: 10px;
+        width: 60%;
+        font-size: 16px;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .search-bar input:focus {
+        border-color: #007bff;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      }
+
+      .search-bar button {
+        padding: 10px 15px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        margin-left: 10px;
+        cursor: pointer;
+        background-color: #007bff;
+        color: #fff;
+        transition: background-color 0.3s ease;
+      }
+
+      .search-bar button:hover {
+        background-color: #0056b3;
+      }
+
+      .clear-btn {
+        background-color: #6c757d;
+      }
+
+      .clear-btn:hover {
+        background-color: #5a6268;
+      }
+
+      /* Job postings container */
+      .job-listings {
+        display: block;
+        margin: 20px auto;
+      }
+
+      .job-posting {
+        background: linear-gradient(
+          135deg,
+          #f0f4f8,
+          #e0e7ff
+        ); /* Lighter gradient */
+        border-radius: 15px;
+        padding: 25px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Softer shadow for a cleaner look */
+        color: #333; /* Darker text for better readability */
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease,
+          background 0.3s ease; /* Smooth transition */
+        height: auto; /* Adjust height based on content */
+        width: 95%;
+        margin: 20px auto;
+        display: flex;
+        flex-direction: row;
+        gap: 15px; /* Slightly more spacing between elements */
+        align-items: center; /* Centering the content vertically */
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* More modern font */
+      }
+
+      .job-posting:hover {
+        transform: translateY(-5px); /* Slight lift effect */
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); /* More prominent shadow */
+        background: linear-gradient(
+          135deg,
+          #e0e7ff,
+          #c5d8ff
+        ); /* Subtle background change */
+      }
+
+      /* Gradient shine effect */
+      .job-posting::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.1),
+          transparent 70%
+        );
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .job-posting:hover::before {
+        opacity: 1;
+      }
+
+      .job-posting h3 {
+        font-size: 1.6rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+        color: #333; /* Darker text for heading */
+      }
+
+      .job-posting p {
+        font-size: 1rem;
+        color: #555; /* Softer gray for paragraph text */
+        line-height: 1.6;
+      }
+
+      .job-posting button {
+        background: linear-gradient(
+          135deg,
+          #4e73df,
+          #1e3c72
+        ); /* Blue gradient */
+        border: none;
+        color: white;
+        padding: 12px 25px; /* Slightly larger padding for a more balanced button */
+        border-radius: 10px; /* More rounded corners */
+        cursor: pointer;
+        margin-top: 10px; /* Keep spacing to avoid overlap */
+        width: auto; /* Ensure the width scales properly */
+        font-size: 16px; /* Responsive font size */
+        transition: background 0.3s ease, transform 0.3s ease,
+          box-shadow 0.3s ease; /* Smooth transition */
+        position: relative; /* Keep the button in its natural flow */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Add a subtle shadow for depth */
+      }
+
+      .job-posting button:hover {
+        background: linear-gradient(
+          135deg,
+          #1e3c72,
+          #4e73df
+        ); /* Reverse the gradient on hover */
+        transform: translateY(-5px); /* Slight lift effect on hover */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* More pronounced shadow on hover */
+      }
+
+      /* Modal styles */
+      .apply-form-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .apply-form-modal-content {
+        width: 80%;
+        max-width: 500px;
+        padding: 30px;
+        background: #ffffff;
+        border-radius: 10px;
+        position: relative;
+        animation: fadeIn 0.5s ease-in-out;
+      }
+
+      .apply-form-modal-content h2 {
+        color: #1d3557;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .apply-form-modal-content p {
+        color: #333;
+        margin-bottom: 20px;
+      }
+
+      .apply-form-modal-content .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 24px;
+        color: #333;
+        cursor: pointer;
+        transition: color 0.3s ease;
+      }
+
+      .apply-form-modal-content .close-btn:hover {
+        color: #007bff;
+      }
+
+      .apply-form-modal-content label {
+        color: #1d3557;
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+
+      .apply-form-modal-content input,
+      .apply-form-modal-content button {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        font-size: 16px;
+      }
+
+      .apply-form-modal-content button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .apply-form-modal-content button:hover {
+        background-color: #0056b3;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .job-posting {
+          width: 90%;
+          margin: 0 auto 20px auto;
+        }
+
+        .apply-form-modal-content {
+          width: 90%;
+        }
+      }
+
+      /* Animations */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: scale(0.9);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      #jobtitleh1 {
+        text-align: center;
+        margin-bottom: 40px;
+        font-size: 2rem; /* Ensure responsive font size */
+      }
+
+      .jobpostingcontainer {
+        max-width: 1200px; /*Prevents content overflow */
+        margin: 0 auto;
+        padding: 0 15px; /* Add padding to ensure proper spacing */
+      }
+      @media (max-width: 768px) {
+        .job-posting button {
+          align-self: center; /* Center button on smaller screens */
+        }
+
+        .job-posting {
+          width: 95%; /* Adjust job posting width for smaller screens */
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="service-details-page">
+    <header
+      id="header"
+      class="header d-flex align-items-center fixed-top"
+      style="background: linear-gradient(145deg, #121212, #292929)"
+    >
+      <div
+        class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between"
+      >
+        <a href="index.html" class="logo d-flex align-items-center">
+          <img src="assets/img/logo.jpg" alt="" />
+          <h1 class="sitename">Inofinitive SR</h1>
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="portfolio.html">About</a></li>
+            <li class="dropdown">
+              <a href="service-details.html"
+                ><span>Services</span>
+                <i class="bi bi-chevron-down toggle-dropdown"></i
+              ></a>
+              <ul>
+                <li>
+                  <a href="service-details.html#it-services">IT Services</a>
+                </li>
+                <li>
+                  <a href="service-details.html#NON-It-Services"
+                    ><span>Non-It Services</span></a
+                  >
+                </li>
+                <li><a href="service-details.html#BPO-services">BPS</a></li>
+                <li>
+                  <a href="service-details.html#Digital-marketing"
+                    >Digital Marketing</a
+                  >
+                </li>
+                <li>
+                  <a href="service-details.html#Consulting">IT Consulting</a>
+                </li>
+                <li>
+                  <a href="service-details.html#SAP-Services">SAP Services</a>
+                </li>
+                <li>
+                  <a href="service-details.html#staffing-Services"
+                    >Staffing Services</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li><a href="training.html">Training</a></li>
+            <li><a href="careers.html" class="active">Careers</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main">
+      <div
+        class="page-title dark-background"
+        style="
+          background-image: url('assets/img/teamImage.jpg');
+          background-size: cover;
+          background-position: center;
+          padding: 100px 0;
+        "
+      >
+        <div class="container position-relative">
+          <h1>Your Future Starts Here – Be Part of Something Exciting!</h1>
+        </div>
+      </div>
+      <div class="search-bar">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Search for job roles..."
+        />
+        <button id="search-button" class="search-icon">&#x1F50D;</button>
+        <button id="clear-button" class="clear-icon">Clear</button>
+      </div>
+
+      <section id="job-listings" class="job-listings section">
+        <h1 id="jobtitleh1" class="text-center"><b>Open Positions</b></h1>
+
+        <div class="jobpostingcontainer">
+          <div class="row gy-5" id="job-postings-container">
+            <!-- Job Postings -->
+            <div class="job-posting" data-role="Frontend Developer">
+              <h3>Frontend Developer</h3>
+              <p>
+                <strong>Job Description:</strong> Building and maintaining user
+                interfaces using React.js.
+              </p>
+              <p>
+                <strong>Required Skills:</strong> HTML, CSS, JavaScript,
+                React.js, Git
+              </p>
+              <p>
+                <strong>Experience:</strong> 2+ years in front-end development.
+              </p>
+              <button
+                class="apply-button"
+                data-id="1"
+                data-title="Frontend Developer"
+                data-description="Building and maintaining user interfaces using React.js. Skills required: HTML, CSS, JavaScript, React.js, Git. Experience: 2+ years in front-end development."
+              >
+                Apply
+              </button>
+            </div>
+            <div class="job-posting" data-role="Backend Developer">
+              <h3>Backend Developer</h3>
+              <p>
+                <strong>Job Description:</strong> Work with Node.js and
+                Express.js to build scalable backend services.
+              </p>
+              <p>
+                <strong>Required Skills:</strong> Node.js, Express.js, MongoDB,
+                APIs
+              </p>
+              <p>
+                <strong>Experience:</strong> 3+ years in backend development.
+              </p>
+              <button
+                class="apply-button"
+                data-id="2"
+                data-title="Backend Developer"
+                data-description="Work with Node.js and Express.js to build scalable backend services. Skills required: Node.js, Express.js, MongoDB, APIs. Experience: 3+ years in backend development."
+              >
+                Apply
+              </button>
+            </div>
+            <div class="job-posting" data-role="Full Stack Developer">
+              <h3>Full Stack Developer</h3>
+              <p>
+                <strong>Job Description:</strong> Proficient in frontend and
+                backend technologies to build applications.
+              </p>
+              <p>
+                <strong>Required Skills:</strong> React.js, Node.js, Express.js,
+                MongoDB
+              </p>
+              <p>
+                <strong>Experience:</strong> 4+ years in full-stack development.
+              </p>
+              <button
+                class="apply-button"
+                data-id="3"
+                data-title="Full Stack Developer"
+                data-description="Proficient in frontend and backend technologies to build applications. Skills required: React.js, Node.js, Express.js, MongoDB. Experience: 4+ years in full-stack development."
+              >
+                Apply
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Modal for Apply Form -->
+      <div id="apply-form-modal" class="apply-form-modal">
+        <div class="apply-form-modal-content">
+          <span class="close-btn">&times;</span>
+          <h2 id="job-title">Apply for the Job</h2>
+          <p id="job-description"></p>
+          <form id="apply-form">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required />
+
+            <label for="mobile">Mobile Number</label>
+            <input type="text" id="mobile" name="mobile" required />
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required />
+
+            <label for="resume">Resume Link (URL)</label>
+            <input type="url" id="resume" name="resume" required />
+
+            <label for="cv">Upload CV</label>
+            <input type="text" id="cv" name="cv" required />
+
+            <input type="hidden" id="jobId" name="job_id" />
+
+            <button type="submit">Submit Application</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Modal Styles -->
+      <script>
+        // Functionality for search and clear buttons
+        const searchInput = document.getElementById("search-input");
+        const searchButton = document.getElementById("search-button");
+        const clearButton = document.getElementById("clear-button");
+        const jobPostingsContainer = document.getElementById(
+          "job-postings-container"
+        );
+        const jobPostings = document.querySelectorAll(".job-posting");
+
+        searchButton.addEventListener("click", () => {
+          const query = searchInput.value.trim().toLowerCase();
+
+          jobPostings.forEach((job) => {
+            const role = job.getAttribute("data-role").toLowerCase();
+            if (role.includes(query)) {
+              job.style.display = "flex";
+            } else {
+              job.style.display = "none";
+            }
+          });
+        });
+
+        clearButton.addEventListener("click", () => {
+          searchInput.value = "";
+          jobPostings.forEach((job) => {
+            job.style.display = "flex";
+          });
+        });
+
+        // Modal functionality
+        const applyButtons = document.querySelectorAll(".apply-button");
+        const modal = document.getElementById("apply-form-modal");
+        const closeBtn = document.querySelector(".close-btn");
+        const jobTitleElem = document.getElementById("job-title");
+        const jobDescriptionElem = document.getElementById("job-description");
+        const jobIdInput = document.getElementById("jobId");
+
+        // Open modal with job details
+        applyButtons.forEach((button) => {
+          button.addEventListener("click", () => {
+            const jobId = button.getAttribute("data-id");
+            const jobTitle = button.getAttribute("data-title");
+            const jobDescription = button.getAttribute("data-description");
+
+            jobTitleElem.innerText = jobTitle;
+            jobDescriptionElem.innerText = jobDescription;
+            jobIdInput.value = jobId;
+
+            modal.style.display = "flex";
+          });
+        });
+
+        // Close modal
+        closeBtn.addEventListener("click", () => {
+          modal.style.display = "none";
+        });
+
+        // Close modal when clicking outside the modal content
+        window.addEventListener("click", (event) => {
+          if (event.target === modal) {
+            modal.style.display = "none";
+          }
+        });
+
+        // Form submission (with an example alert)
+        document
+          .getElementById("apply-form")
+          .addEventListener("submit", (event) => {
+            event.preventDefault();
+            alert("Your application has been submitted!");
+            modal.style.display = "none";
+          });
+      </script>
+
+      <!-- Email js Script -->
+      <!-- Email.js Script -->
+      <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+      <script>
+        // Initialize Email.js
+        (function () {
+          emailjs.init("DE7l6B5A8yl5l0LIH"); // Replace with your actual Email.js Public Key
+        })();
+
+        // Form Submission Handler
+        document
+          .getElementById("apply-form")
+          .addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Get form data
+            const formData = {
+              name: document.getElementById("name").value,
+              mobile: document.getElementById("mobile").value,
+              email: document.getElementById("email").value,
+              resume: document.getElementById("resume").value,
+              cv: document.getElementById("cv").value,
+              job_id: document.getElementById("jobId").value,
+            };
+
+            // Validate form fields
+            if (
+              !formData.name ||
+              !formData.mobile ||
+              !formData.email ||
+              !formData.resume ||
+              !formData.cv
+            ) {
+              alert("All fields except Job ID are required!");
+              return;
+            }
+
+            // Send email via Email.js
+            emailjs
+              .send("service_32mmv7p", "template_67u4k0g", formData) // Replace with your Email.js service ID and template ID
+              .then(
+                function (response) {
+                  alert("Application submitted successfully!");
+                  console.log("SUCCESS!", response.status, response.text);
+                },
+                function (error) {
+                  alert("Failed to submit the application. Please try again.");
+                  console.error("FAILED...", error);
+                }
+              );
+          });
+      </script>
+    </main>
+
+    <footer
+      id="footer"
+      class="footer"
+      style="background: linear-gradient(145deg, #1a1a1a, #0f0f0f)"
+    >
+      <div
+        class="container d-flex flex-wrap justify-content-between align-items-center text-center text-lg-start"
+      >
+        <!-- Section 1: Logo and Social Media -->
+        <div class="footer-section text-center">
+          <img
+            src="assets/img/logo.jpg"
+            alt="Inofinitive SR Logo"
+            style="
+              width: 180px;
+              border-radius: 50%;
+              box-shadow: 0 8px 20px rgba(245, 152, 30, 0.8);
+              margin-bottom: 25px;
+            "
+          />
+          <div class="social-links d-flex justify-content-center">
+            <a
+              href="https://www.instagram.com/inofinitive?igsh=MTRmc3BkeGF2ems4Nw=="
+              class="me-3"
+            >
+              <img src="assets/img/instagram.svg" alt="Instagram" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/inofinitive-sr-technologies-2024mbnr-it-hub?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+              class="me-3"
+            >
+              <img src="assets/img/linkedin.svg" alt="LinkedIn" />
+            </a>
+            <a href="https://x.com/inofinitiveSR" class="me-3">
+              <img src="assets/img/x.svg" alt="Twitter" />
+            </a>
+            <a
+              href="https://www.facebook.com/inofinitivesrtechnologies?mibextid=ZbWKwL"
+            >
+              <img src="assets/img/facebook.svg" alt="Facebook" />
+            </a>
+          </div>
+        </div>
+
+        <!-- Section 2: Quick Links -->
+        <div class="footer-section">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="portfolio.html">About Us</a></li>
+            <li><a href="service-details.html">Services</a></li>
+            <li><a href="training.html">Training</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Section 3: Contact Details -->
+        <div class="footer-section">
+          <h5>Contact Us</h5>
+          <p>
+            Email:
+            <a href="mailto:info@inofinitive.com"
+              >support@inofinitivesrtechnologies.com</a
+            >
+          </p>
+          <p>Phone: <a href="tel:+7416305104">+91-7416305104</a></p>
+        </div>
+
+        <!-- Section 4: Newsletter -->
+        <div class="footer-section text-center text-lg-start">
+          <h5>Subscribe to our Newsletter</h5>
+          <p>Stay updated with our latest news and offers.</p>
+          <form>
+            <input type="email" placeholder="Enter your email" required />
+            <br />
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+
+        <!-- Section 5: Policies -->
+        <div class="footer-section">
+          <h5>Policies</h5>
+          <ul class="list-unstyled">
+            <li>
+              <a href="policies.html#terms&conditions">Terms & Conditions</a>
+            </li>
+            <li><a href="policies.html#privacy">Privacy Policy</a></li>
+            <li><a href="policies.html#disclaimer">Disclaimers</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="container text-center mt-5">
+        <hr />
+        <p>© 2024 <strong>Inofinitive SR</strong>. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Scroll Top -->
+    <a
+      href="#"
+      id="scroll-top"
+      class="scroll-top d-flex align-items-center justify-content-center"
+    ></a>
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Main JS File -->
+    <script src="assets/js/main.js"></script>
+    <script>
+      function openApplyForm() {
+        document.getElementById("apply-form-modal").style.display = "block";
+      }
+
+      function closeApplyForm() {
+        document.getElementById("apply-form-modal").style.display = "none";
+      }
+    </script>
+  </body>
+</html>

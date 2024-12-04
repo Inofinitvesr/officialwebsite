@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Contact - Inofinitive SR</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicons -->
+    <link href="assets/img/logo.jpg" rel="icon" />
+    <link href="assets/img/logo.jpg" rel="apple-touch-icon" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet" />
+    <link
+      href="assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+
+    <!-- Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet" />
+
+    <!-- Styles -->
+    <style>
+      /* General Styles */
+      body {
+        background: linear-gradient(145deg, #121212, #1e1e1e);
+        color: #ffffff;
+        font-family: "Poppins", sans-serif;
+      }
+
+      h2,
+      h4 {
+        color: #ff6600;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+      }
+
+      p,
+      label {
+        color: #e0e0e0;
+      }
+
+      a {
+        color: #ff6600;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      a:hover {
+        color: #ff4500;
+      }
+
+      /* Info Box Styling */
+      #contact-cards .info-box {
+        background: linear-gradient(145deg, #ffffff, #f0f0f0);
+        border-radius: 15px;
+        padding: 25px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2), 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+        max-width: 320px;
+        margin: 15px auto; /* Centers the cards on smaller screens */
+      }
+
+      #contact-cards .info-box:hover {
+        transform: translateY(-12px) scale(1.05);
+        box-shadow: 0 12px 40px rgba(255, 102, 0, 0.6),
+          0 6px 20px rgba(255, 102, 0, 0.3);
+      }
+
+      /* Card Image Styling */
+      .card-image {
+        width: 60%; /* Smaller images */
+        height: auto;
+        object-fit: cover;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        animation: fadeIn 1.2s ease; /* Fade-in animation */
+      }
+
+      /* Text Styling */
+      #contact-cards h4 {
+        font-size: 20px;
+        color: #333;
+        font-weight: bold;
+        margin-top: 10px;
+      }
+
+      #contact-cards p {
+        color: #555;
+        font-size: 15px;
+      }
+
+      /* Animation Keyframes */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: scale(0.9);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      /* Light Grey Form Section */
+      .form-container {
+        background: linear-gradient(
+          135deg,
+          rgba(240, 240, 240, 0.95),
+          rgba(225, 225, 225, 0.95)
+        ); /* Light Grey Gradient */
+        border-radius: 20px;
+        padding: 40px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        margin-top: 50px;
+        color: #333; /* Darker text for contrast */
+        position: relative;
+        overflow: hidden;
+        animation: fadeIn 1.5s ease;
+      }
+
+      /* Section Header */
+      #contact h2 {
+        font-size: 34px;
+        font-weight: 700;
+        margin-bottom: 10px;
+        color: #333;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        animation: slideInFromLeft 1s ease;
+      }
+
+      #contact h4 {
+        font-size: 20px;
+        color: #777; /* Slightly muted grey */
+        margin-bottom: 30px;
+        font-style: italic;
+        animation: slideInFromRight 1s ease;
+      }
+
+      /* Form Input Fields */
+      form .form-control {
+        background: rgba(250, 250, 250, 0.95); /* Soft grey background */
+        border: 2px solid rgba(200, 200, 200, 0.5); /* Subtle grey border */
+        color: #333;
+        border-radius: 12px;
+        padding: 16px 20px;
+        margin-bottom: 20px;
+        transition: all 0.3s ease-in-out;
+        font-size: 16px;
+        box-sizing: border-box;
+      }
+
+      form .form-control:focus {
+        box-shadow: 0 0 15px rgba(200, 200, 200, 0.6); /* Soft glow */
+        border-color: #b0b0b0; /* Subtle dark grey border */
+      }
+
+      form .form-control::placeholder {
+        color: rgba(100, 100, 100, 0.6);
+        font-style: italic;
+      }
+
+      /* Labels and Texts */
+      form label {
+        font-weight: 600;
+        font-size: 18px;
+        color: #333;
+      }
+
+      form p {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 20px;
+      }
+
+      /* Button Styling - Blue Theme */
+      form button {
+        background: linear-gradient(
+          135deg,
+          #4f8cf4,
+          #3a72d1
+        ); /* Soft Blue Gradient */
+        color: #ffffff;
+        font-weight: bold;
+        border: none;
+        border-radius: 12px;
+        padding: 14px 25px;
+        transition: all 0.3s ease, transform 0.2s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 16px;
+        animation: bounce 2s infinite;
+      }
+
+      form button:hover {
+        background: linear-gradient(
+          135deg,
+          #3a72d1,
+          #5a92f3
+        ); /* Darker Blue Gradient */
+        box-shadow: 0 10px 30px rgba(58, 114, 209, 0.4); /* Soft blue glow */
+        transform: scale(1.05);
+      }
+
+      /* Decorative Elements */
+      .form-container::before {
+        content: "";
+        position: absolute;
+        top: -40px;
+        right: -40px;
+        width: 150px;
+        height: 150px;
+        background: rgba(58, 114, 209, 0.1); /* Light Blue */
+        border-radius: 50%;
+        z-index: 1;
+      }
+
+      .form-container::after {
+        content: "";
+        position: absolute;
+        bottom: -40px;
+        left: -40px;
+        width: 200px;
+        height: 200px;
+        background: rgba(58, 114, 209, 0.1); /* Light Blue */
+        border-radius: 50%;
+        z-index: 1;
+      }
+
+      /* Responsive Enhancements */
+      @media (max-width: 768px) {
+        .form-container {
+          padding: 25px;
+        }
+
+        #contact h2 {
+          font-size: 28px;
+        }
+
+        #contact h4 {
+          font-size: 18px;
+        }
+
+        form .form-control {
+          font-size: 14px;
+          padding: 12px;
+        }
+
+        form button {
+          padding: 12px 20px;
+          font-size: 14px;
+        }
+      }
+
+      /* Animations */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes slideInFromLeft {
+        from {
+          transform: translateX(-100%);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideInFromRight {
+        from {
+          transform: translateX(100%);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-5px);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Header Section  -->
+    <header
+      id="header"
+      class="header d-flex align-items-center fixed-top"
+      style="background: linear-gradient(145deg, #121212, #292929)"
+    >
+      <div
+        class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between"
+      >
+        <a href="index.html" class="logo d-flex align-items-center">
+          <img src="assets/img/logo.jpg" alt="" />
+          <h1 class="sitename">Inofinitive SR</h1>
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="portfolio.html">About</a></li>
+            <li class="dropdown">
+              <a href="service-details.html"
+                ><span>Services</span>
+                <i class="bi bi-chevron-down toggle-dropdown"></i
+              ></a>
+              <ul>
+                <li>
+                  <a href="service-details.html#it-services">IT Services</a>
+                </li>
+                <li>
+                  <a href="service-details.html#NON-It-Services"
+                    ><span>Non-It Services</span></a
+                  >
+                </li>
+                <li><a href="service-details.html#BPO-services">BPS</a></li>
+                <li>
+                  <a href="service-details.html#Digital-marketing"
+                    >Digital Marketing</a
+                  >
+                </li>
+                <li>
+                  <a href="service-details.html#Consulting">IT Consulting</a>
+                </li>
+                <li>
+                  <a href="service-details.html#SAP-Services">SAP Services</a>
+                </li>
+                <li>
+                  <a href="service-details.html#staffing-Services"
+                    >Staffing Services</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li><a href="training.html">Training</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html" class="active">Contact Us</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <!-- Page Title -->
+      <div class="page-title dark-background">
+        <div class="container position-relative">
+          <h1>Get in Touch with Us</h1>
+          <p>Your Questions, Our Priority. We're Just a Message Away!</p>
+        </div>
+      </div>
+      <!-- Contact Cards -->
+      <section id="contact-cards" class="text-center">
+        <div class="container">
+          <div class="row">
+            <!-- Location Card -->
+            <div class="col-lg-4">
+              <div class="info-box">
+                <img
+                  src="assets/img/contactaddress1.png"
+                  alt="Location"
+                  class="card-image"
+                />
+                <h4>Location</h4>
+                <p>Hyderabad, Telangana, India</p>
+              </div>
+            </div>
+            <!-- Email Card -->
+            <div class="col-lg-4">
+              <div class="info-box">
+                <img
+                  src="assets/img/contactenail1.png"
+                  alt="Email"
+                  class="card-image"
+                />
+                <h4>Email</h4>
+                <p style="text-align: center">
+                  support@inofinitivesrtechnologies.com
+                </p>
+              </div>
+            </div>
+            <!-- Call Card -->
+            <div class="col-lg-4">
+              <div class="info-box">
+                <img
+                  src="assets/img/contactphone.png"
+                  alt="Call"
+                  class="card-image"
+                />
+                <h4>Call</h4>
+                <p>+917416305104</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Form -->
+      <section id="contact" class="text-center">
+        <div class="container form-container">
+          <h2>Get Started Now</h2>
+          <h4>Send us a Message</h4>
+
+          <!-- Contact Form -->
+          <form id="contactForm" class="mt-3">
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <input
+                  type="text"
+                  id="first_name"
+                  class="form-control"
+                  name="first_name"
+                  placeholder="First Name *"
+                  required
+                />
+              </div>
+              <div class="col-md-6 mb-3">
+                <input
+                  type="text"
+                  id="last_name"
+                  class="form-control"
+                  name="last_name"
+                  placeholder="Last Name"
+                  required
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <input
+                  type="email"
+                  id="email"
+                  class="form-control"
+                  name="email"
+                  placeholder="Your Email"
+                  required
+                />
+              </div>
+              <div class="col-md-6 mb-3">
+                <input
+                  type="text"
+                  id="subject"
+                  class="form-control"
+                  name="subject"
+                  placeholder="Subject"
+                  required
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <input
+                  type="number"
+                  id="mobile"
+                  class="form-control"
+                  name="mobile"
+                  placeholder="Your Mobile"
+                  required
+                />
+              </div>
+              <div class="col-md-6 mb-3">
+                <input
+                  type="url"
+                  id="website"
+                  class="form-control"
+                  name="website"
+                  placeholder="Your Website"
+                />
+              </div>
+            </div>
+            <div class="mb-3">
+              <label style="color: #0f0f0f; font-size: 20px"
+                >How can we help you?</label
+              >
+              <p style="color: #0f0f0f">
+                Feel free to ask a question or simply leave a comment
+              </p>
+              <textarea
+                id="message"
+                class="form-control"
+                name="message"
+                rows="5"
+                placeholder="Comment/Questions"
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+        </div>
+      </section>
+
+      <!--  Email js Script -->
+      <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+      <script>
+        // Initialize Email.js
+        (function () {
+          emailjs.init("DE7l6B5A8yl5l0LIH"); // Replace with your Email.js User ID
+        })();
+
+        const contactForm = document.getElementById("contactForm");
+
+        contactForm.addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          // Form validation
+          const firstName = document.getElementById("first_name").value.trim();
+          const lastName = document.getElementById("last_name").value.trim();
+          const email = document.getElementById("email").value.trim();
+          const subject = document.getElementById("subject").value.trim();
+          const mobile = document.getElementById("mobile").value.trim();
+          const website = document.getElementById("website").value.trim(); // Optional
+          const message = document.getElementById("message").value.trim();
+
+          if (
+            !firstName ||
+            !lastName ||
+            !email ||
+            !subject ||
+            !mobile ||
+            !message
+          ) {
+            alert("Please fill out all required fields.");
+            return;
+          }
+
+          if (!/^\S+@\S+\.\S+$/.test(email)) {
+            alert("Please enter a valid email address.");
+            return;
+          }
+
+          if (mobile.length < 10 || mobile.length > 15) {
+            alert("Please enter a valid mobile number.");
+            return;
+          }
+
+          if (website && !/^https?:\/\/\S+\.\S+$/.test(website)) {
+            alert("Please enter a valid URL or leave the website field blank.");
+            return;
+          }
+
+          // Sending data through Email.js
+          const serviceID = "service_jaqtxcv"; // Replace with your Email.js service ID
+          const templateID = "template_8qlmcaa"; // Replace with your Email.js template ID
+
+          emailjs
+            .send(serviceID, templateID, {
+              first_name: firstName,
+              last_name: lastName,
+              email: email,
+              subject: subject,
+              mobile: mobile,
+              website: website || "N/A", // Send "N/A" if no website provided
+              comments: message,
+            })
+            .then(() => {
+              alert("Your message has been sent successfully!");
+              contactForm.reset();
+            })
+            .catch((error) => {
+              console.error("Failed to send message:", error);
+              alert(
+                "There was an error sending your message. Please try again later."
+              );
+            });
+        });
+      </script>
+    </main>
+    <section>
+      <!-- Chat Icon -->
+      <div class="chat-icon" id="chatButton" onclick="toggleIcons()">
+        <i class="bi bi-chat-dots"></i>
+      </div>
+
+      <!-- Expandable Icons -->
+      <div class="expand-icons" id="iconContainer">
+        <div
+          class="icon"
+          onclick="window.location.href='https://wa.me/your-number'"
+        >
+          <i class="bi bi-whatsapp"></i>
+        </div>
+        <div
+          class="icon"
+          onclick="window.location.href='mailto:your-email@example.com'"
+        >
+          <i class="bi bi-envelope"></i>
+        </div>
+        <div class="icon" onclick="window.location.href='tel:+1234567890'">
+          <i class="bi bi-telephone"></i>
+        </div>
+        <div class="icon" onclick="toggleIcons()">
+          <i class="bi bi-x"></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer section -->
+    <footer
+      id="footer"
+      class="footer"
+      style="background: linear-gradient(145deg, #1a1a1a, #0f0f0f)"
+    >
+      <div
+        class="container d-flex flex-wrap justify-content-between align-items-center text-center text-lg-start"
+      >
+        <!-- Section 1: Logo and Social Media -->
+        <div class="footer-section text-center">
+          <img
+            src="assets/img/logo.jpg"
+            alt="Inofinitive SR Logo"
+            style="
+              width: 200px;
+              border-radius: 50%;
+              box-shadow: 0 8px 20px rgba(245, 152, 30, 0.8);
+              margin-bottom: 25px;
+            "
+          />
+          <div class="social-links d-flex justify-content-center">
+            <a
+              href="https://www.instagram.com/inofinitive?igsh=MTRmc3BkeGF2ems4Nw=="
+              class="me-3"
+            >
+              <img src="assets/img/instagram.svg" alt="Instagram" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/inofinitive-sr-technologies-2024mbnr-it-hub?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+              class="me-3"
+            >
+              <img src="assets/img/linkedin.svg" alt="LinkedIn" />
+            </a>
+            <a href="https://x.com/inofinitiveSR" class="me-3">
+              <img src="assets/img/x.svg" alt="Twitter" />
+            </a>
+            <a
+              href="https://www.facebook.com/inofinitivesrtechnologies?mibextid=ZbWKwL"
+            >
+              <img src="assets/img/facebook.svg" alt="Facebook" />
+            </a>
+          </div>
+        </div>
+
+        <!-- Section 2: Quick Links -->
+        <div class="footer-section">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="portfolio.html">About Us</a></li>
+            <li><a href="service-details.html">Services</a></li>
+            <li><a href="training.html">Training</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Section 3: Contact Details -->
+        <div class="footer-section">
+          <h5>Contact Us</h5>
+          <p>
+            Email:
+            <a href="mailto:info@inofinitive.com"
+              >support@inofinitivesrtechnologies.com</a
+            >
+          </p>
+          <p>Phone: <a href="tel:+7416305104">+91-7416305104</a></p>
+        </div>
+
+        <!-- Section 4: Newsletter -->
+        <div class="footer-section text-center text-lg-start">
+          <h5>Subscribe to our Newsletter</h5>
+          <p>Stay updated with our latest news and offers.</p>
+          <form>
+            <input type="email" placeholder="Enter your email" required />
+            <br />
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+
+        <!-- Section 5: Policies -->
+        <div class="footer-section">
+          <h5>Policies</h5>
+          <ul class="list-unstyled">
+            <li><a href="terms.html">Terms & Conditions</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="disclaimer.html">Disclaimers</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="container text-center mt-5">
+        <hr />
+        <p>© 2024 <strong>Inofinitive SR</strong>. All Rights Reserved.</p>
+      </div>
+    </footer>
+    <!-- Chat icon -->
+    <!-- Chat icon script -->
+    <script>
+      const chatButton = document.getElementById("chatButton");
+      const iconContainer = document.getElementById("iconContainer");
+
+      function toggleIcons() {
+        chatButton.classList.toggle("d-none");
+        iconContainer.classList.toggle("active");
+      }
+    </script>
+
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Main JS File -->
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
