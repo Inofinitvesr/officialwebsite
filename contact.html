@@ -72,44 +72,62 @@
       }
 
       /* Info Box Styling */
-      #contact-cards .info-box {
-        background: linear-gradient(145deg, #ffffff, #f0f0f0);
-        border-radius: 15px;
-        padding: 25px;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2), 0 4px 10px rgba(0, 0, 0, 0.1);
-        transition: transform 0.4s ease, box-shadow 0.4s ease;
-        max-width: 320px;
-        margin: 15px auto; /* Centers the cards on smaller screens */
-      }
+     #contact-cards .info-box {
+  background: linear-gradient(145deg, #ffffff, #f0f0f0);
+  border-radius: 15px;
+  padding: 20px; /* Reduced padding */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2), 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  max-width: 280px; /* Reduced max-width */
+  margin: 15px auto; /* Centers the cards on smaller screens */
+}
 
-      #contact-cards .info-box:hover {
-        transform: translateY(-12px) scale(1.05);
-        box-shadow: 0 12px 40px rgba(255, 102, 0, 0.6),
-          0 6px 20px rgba(255, 102, 0, 0.3);
-      }
-
+     #contact-cards .info-box:hover {
+  transform: translateY(-12px) scale(1.05);
+  box-shadow: 0 12px 40px rgba(255, 102, 0, 0.6), 0 6px 20px rgba(255, 102, 0, 0.3);
+}
       /* Card Image Styling */
       .card-image {
-        width: 60%; /* Smaller images */
-        height: auto;
-        object-fit: cover;
-        border-radius: 10px;
-        margin-bottom: 20px;
-        animation: fadeIn 1.2s ease; /* Fade-in animation */
-      }
+  width: 50%; /* Further reduced image size */
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px; /* Reduced bottom margin */
+  animation: fadeIn 1.2s ease; /* Fade-in animation */
+}
 
       /* Text Styling */
       #contact-cards h4 {
-        font-size: 20px;
-        color: #333;
-        font-weight: bold;
-        margin-top: 10px;
-      }
+  font-size: 18px; /* Reduced font size */
+  color: #333;
+  font-weight: bold;
+  margin-top: 10px;
+}
 
-      #contact-cards p {
-        color: #555;
-        font-size: 15px;
-      }
+     #contact-cards p {
+  color: #555;
+  font-size: 14px; /* Reduced font size */
+}
+
+      /* Responsive Enhancements */
+@media (max-width: 768px) {
+  #contact-cards .info-box {
+    max-width: 100%; /* Make it full-width on mobile */
+    padding: 15px; /* Less padding on smaller screens */
+  }
+
+  .card-image {
+    width: 60%; /* Adjust image size for mobile */
+  }
+
+  #contact-cards h4 {
+    font-size: 16px; /* Smaller font size on mobile */
+  }
+
+  #contact-cards p {
+    font-size: 12px; /* Smaller font size for better readability on mobile */
+  }
+}
 
       /* Animation Keyframes */
       @keyframes fadeIn {
